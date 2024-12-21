@@ -1,0 +1,78 @@
+# SKHDRC (keyboard shortcuts for yabai)
+
+# Use alt/option as the leader key (cmd is reserved for macOS)
+# Navigation (alt + hjkl)
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# Moving windows (alt + shift + hjkl)
+shift + alt - h : yabai -m window --warp west
+shift + alt - j : yabai -m window --warp south
+shift + alt - k : yabai -m window --warp north
+shift + alt - l : yabai -m window --warp east
+
+shift + alt - m : yabai -m window --space last; yabai -m space --focus last
+shift + alt - p : yabai -m window --space prev; yabai -m space --focus prev
+shift + alt - n : yabai -m window --space next; yabai -m space --focus next
+
+# Window commands
+alt - d : open -a "Spotlight"
+alt - space : open -a "alacritty"
+alt - c : yabai -m window --display next || yabai -m window --display first
+alt - z : yabai -m window --toggle zoom-fullscreen
+
+# Layout modes
+alt - t : yabai -m space --layout stack
+alt - g : yabai -m space --layout bsp
+alt - s : yabai -m space --layout float
+
+# Additional useful shortcuts
+# Create space
+alt - n : yabai -m space --create
+
+# Destroy space
+alt + shift - q : yabai -m space --destroy
+
+# Fast focus spaces
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5 
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8 
+alt - 9 : yabai -m space --focus 9 
+
+# Send window to space and follow
+alt + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
+alt + shift - 2 : yabai -m window --space 2; yabai -m space --focus 2
+alt + shift - 3 : yabai -m window --space 3; yabai -m space --focus 3
+alt + shift - 4 : yabai -m window --space 4; yabai -m space --focus 4
+alt + shift - 5 : yabai -m window --space 5; yabai -m space --focus 5
+alt + shift - 6 : yabai -m window --space 6; yabai -m space --focus 6
+alt + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
+alt + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
+alt + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
+
+# Balance size of windows
+alt - = : yabai -m space --balance
+
+# Rotate tree
+alt - r : yabai -m space --rotate 90
+#
+# Toggle window float
+alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Restart Yabai
+shift + lctrl + alt - r : \
+    /usr/bin/env osascript <<< \
+        "display notification \"Restarting Yabai\" with title \"Yabai\""; \
+    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+# Make window native fullscreen
+alt - f         : yabai -m window --toggle zoom-fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
+
