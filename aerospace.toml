@@ -145,6 +145,8 @@ ctrl-cmd-alt-shift-k = ['join-with up', 'mode main']
 ctrl-cmd-alt-shift-l = ['join-with right', 'mode main']
 
 [mode.chrome.binding]
-w   = "exec-and-forget google-chrome-stable --profile-directory=Default"
-p   = "exec-and-forget google-chrome-stable --profile-directory='Profile 1'"
+w   = ['exec-and-forget /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --profile-directory="Profile 2"', 'mode main']
+p   = ['exec-and-forget /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --profile-directory="Default"', 'mode main']
+# w   = "exec-and-forget google-chrome-stable --profile-directory=Default"
+# p   = "exec-and-forget google-chrome-stable --profile-directory='Profile 1'"
 esc = "mode main"
