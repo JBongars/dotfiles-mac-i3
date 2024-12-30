@@ -1,5 +1,9 @@
 # yabai configuration
 
+# Hack to ensure additional scripts get loaded
+# to override mac default behavior
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # ---------------------------------------
 # Global Settings
 # ---------------------------------------
